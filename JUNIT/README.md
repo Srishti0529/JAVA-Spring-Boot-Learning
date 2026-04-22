@@ -1,186 +1,87 @@
-# 🧪 JUnit – Complete Guide (Theory + Syntax)
+# 📘 JUnit in Java
 
-## 📌 What is JUnit?
+## 📌 Introduction
 
-JUnit is a **unit testing framework for Java** used to test individual components (methods/classes) in isolation. It helps ensure code correctness, reliability, and maintainability.
+JUnit is a popular **testing framework for Java** used to write and run automated tests.
+
+* It helps developers test individual units of code (methods/classes)
+* Ensures code works as expected
+* Widely used in development and CI/CD pipelines
 
 ---
 
-## 🎯 Purpose
+## 🎯 Purpose of JUnit
 
-* Validate functionality of code
+* Verify correctness of code
 * Detect bugs early
-* Support Test-Driven Development (TDD)
-* Improve code quality
+* Support test-driven development (TDD)
+* Improve code quality and reliability
 
 ---
 
-## 🏗️ Versions
+## 🧱 Key Concepts
 
-* **JUnit 4** → Basic annotations, less flexible
-* **JUnit 5 (Jupiter)** → Modern, modular, recommended
+### 🔹 Test Case
 
----
+* A single unit of testing
+* Tests a specific functionality
 
-## 🧩 JUnit 5 Architecture
+### 🔹 Test Suite
 
-* **JUnit Platform** → Runs test engines
-* **JUnit Jupiter** → API for writing tests
-* **JUnit Vintage** → Supports older JUnit versions
+* A collection of test cases
 
----
+### 🔹 Assertions
 
-## ⚙️ Maven Dependency
-
-```xml
-<dependency>
-    <groupId>org.junit.jupiter</groupId>
-    <artifactId>junit-jupiter</artifactId>
-    <version>5.x.x</version>
-    <scope>test</scope>
-</dependency>
-```
+* Used to check expected vs actual results
+* Example: `assertEquals`, `assertTrue`, `assertFalse`
 
 ---
 
-## 🏷️ Annotations (Syntax + Description)
+## ⚙️ Common Annotations (JUnit 5)
 
-### Test Annotation
-
-```java
-@Test
-```
-
-Marks a method as a test case.
+* `@Test` → Marks a test method
+* `@BeforeEach` → Runs before each test
+* `@AfterEach` → Runs after each test
+* `@BeforeAll` → Runs once before all tests
+* `@AfterAll` → Runs once after all tests
 
 ---
 
-### Lifecycle Annotations
+## 🔄 Working of JUnit
 
-```java
-@BeforeEach
-@AfterEach
-@BeforeAll
-@AfterAll
-```
-
-* `@BeforeEach` → runs before each test
-* `@AfterEach` → runs after each test
-* `@BeforeAll` → runs once before all tests
-* `@AfterAll` → runs once after all tests
+1. Write test methods
+2. Use annotations to define behavior
+3. Run tests using IDE or build tool
+4. Compare expected vs actual results using assertions
 
 ---
 
-### Disable Test
+## 🧠 Key Features
 
-```java
-@Disabled
-```
-
-Skips execution of a test.
-
----
-
-### Display Name
-
-```java
-@DisplayName("Custom Name")
-```
-
-Provides custom name for test execution.
+* Simple and easy to use
+* Supports automated testing
+* Provides detailed test reports
+* Integrates with tools like Maven, Gradle, Jenkins
 
 ---
 
-## 🧪 Assertions (Syntax)
+## 🎯 Advantages
 
-```java
-assertEquals(expected, actual);
-assertNotEquals(expected, actual);
-assertTrue(condition);
-assertFalse(condition);
-assertNull(object);
-assertNotNull(object);
-```
+* Improves code quality
+* Saves debugging time
+* Encourages better design (TDD)
+* Helps in regression testing
 
 ---
 
-### Exception Assertion
+## ❌ Disadvantages
 
-```java
-assertThrows(ExceptionType.class, executable);
-```
-
----
-
-### Timeout Assertion
-
-```java
-assertTimeout(duration, executable);
-```
+* Requires learning testing concepts
+* Writing tests takes extra time
+* Not suitable for UI testing alone
 
 ---
 
-## 🔁 Test Lifecycle Flow
+## 📌 Conclusion
 
-1. `@BeforeAll`
-2. `@BeforeEach`
-3. `@Test`
-4. `@AfterEach`
-5. `@AfterAll`
-
----
-
-## 🔄 Types of Testing
-
-* **Unit Testing** → individual components
-* **Integration Testing** → interaction between modules
-* **Functional Testing** → requirement-based testing
-* **Regression Testing** → ensures no breakage
-
----
-
-## 🔢 Parameterized Tests (Syntax)
-
-```java
-@ParameterizedTest
-@ValueSource(...)
-```
-
-Other sources:
-
-* `@CsvSource`
-* `@MethodSource`
-* `@EnumSource`
-
----
-
-## 📊 Test Results
-
-* Passed
-* Failed
-* Skipped
-
----
-
-## 🧠 Key Concepts
-
-* **Test Case** → single test unit
-* **Test Suite** → collection of tests
-* **Assertions** → validation checks
-* **Fixtures** → setup/teardown logic
-
----
-
-## 🔥 Best Practices
-
-* Write independent tests
-* Use clear naming
-* Keep tests small and focused
-* Cover edge cases
-* Avoid dependencies between tests
-
----
-
-## 🎯 Interview Definition
-
-JUnit is a Java testing framework that uses annotations and assertions to define and execute test cases. It supports lifecycle management, parameterized tests, and integration with build tools, ensuring reliable and maintainable code.
+JUnit is an essential tool for Java developers to ensure code reliability and maintainability. By writing tests, developers can catch errors early and build more robust applications.
